@@ -1,16 +1,23 @@
+import dotenv from 'dotenv';
 import express from 'express';
-import entryRoutes from './routes/entryRoutes';
+import contentTypeRoutes from './routes/contentTypeRoutes';
+import { swaggerSpec, swaggerUi } from './swagger';
+
+dotenv.config();
 
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON
 app.use(express.json());
 
-// Use routes for entries
-app.use('/entries', entryRoutes);
+app.get('/', (req, res) => {
+  res.send('Welcome to the Contentful API');
+});
 
-// Start the server
+app.use('/api', contentTypeRoutes);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

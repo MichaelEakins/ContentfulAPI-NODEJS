@@ -6,7 +6,6 @@ dotenv.config();
 
 const router = Router();
 
-// Load environment variables from .env file
 const SPACE_ID = 'your_space_id';
 const CDA_ACCESS_TOKEN = 'your_cda_access_token';
 const CMA_ACCESS_TOKEN = 'your_cma_access_token';
@@ -20,7 +19,6 @@ const managementClient = createManagementClient({
   accessToken: CMA_ACCESS_TOKEN,
 });
 
-// Fetch all entries
 router.get('/', async (req: Request, res: Response) => {
   try {
     const entries = await deliveryClient.getEntries();
@@ -30,7 +28,6 @@ router.get('/', async (req: Request, res: Response) => {
   }
 });
 
-// Create a new entry
 router.post('/', async (req: Request, res: Response) => {
   try {
     const environment = await managementClient
