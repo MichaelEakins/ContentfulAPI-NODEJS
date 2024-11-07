@@ -1,0 +1,5 @@
+# Ignore environment files
+.env
+
+#Ignore node_modules (NPM Packages)
+node_modules/
