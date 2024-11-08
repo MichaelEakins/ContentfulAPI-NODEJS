@@ -3,3 +3,6 @@
 
 #Ignore node_modules (NPM Packages)
 node_modules/
+
+#Ignore the distribution/ production folder
+dist/

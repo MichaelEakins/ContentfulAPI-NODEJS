@@ -15,7 +15,7 @@ const options = {
       },
     ],
   },
-  apis: ['./src/routes/*.ts'],
+  apis: ['./src/routes/*.ts'], // Focus on source TypeScript files
 };
 
 const swaggerSpec = swaggerJSDoc(options);

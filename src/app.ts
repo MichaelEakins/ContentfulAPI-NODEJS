@@ -1,7 +1,8 @@
+import chalk from 'chalk';
 import dotenv from 'dotenv';
 import express from 'express';
-import contentTypeRoutes from './routes/contentTypeRoutes';
-import { swaggerSpec, swaggerUi } from './swagger';
+import contentTypeRoutes from './routes/contentTypeRoutes.js';
+import { swaggerSpec, swaggerUi } from './swagger.js';
 
 dotenv.config();
 
@@ -19,5 +20,6 @@ app.use('/api', contentTypeRoutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(chalk.green(`Server running at http://localhost:${port}`));
+  console.log(chalk.blue(`Swagger UI available at http://localhost:${port}/api-docs`));
 });

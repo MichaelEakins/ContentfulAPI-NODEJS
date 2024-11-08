@@ -1,28 +1,36 @@
 {
   "name": "contentful-ts-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "src/app.ts",
+  "type": "module",
   "scripts": {
-    "start": "ts-node src/app.ts"
+    "build": "tsc",
+    "start": "npm run build && node dist/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^5.3.0",
     "contentful": "^11.2.0",
-    "contentful-management": "^11.36.1",
+    "contentful-management": "^11.36.2",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
+    "json-patch": "^0.7.0",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1"
+    "swagger-ui-express": "^5.0.1",
+    "undici": "^6.20.1"
   },
   "devDependencies": {
+    "@types/chalk": "^2.2.4",
+    "@types/dotenv": "^8.2.3",
     "@types/express": "^5.0.0",
+    "@types/json-patch": "^0.0.33",
     "@types/node": "^22.9.0",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.7",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "undici-types": "^6.20.0"
   }
 }
